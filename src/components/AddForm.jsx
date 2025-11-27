@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { saveInStorage } from '../utils/SaveInStorage';
 
-export const AddForm = () => {
+export const AddForm = ({ setList }) => {
   const componentTitle = 'Añadir película';
   const [movie, setMovie] = useState({
     title: '',
@@ -24,11 +25,11 @@ export const AddForm = () => {
 
     setMovie(movieInfo);
 
-    saveInStorage(movie);
-  };
+    setList((elements) => {
+      return [movieInfo, ...elements];
+    });
 
-  const saveInStorage = (m) => {
-    localStorage.setItem('movies', JSON.stringify([m]));
+    saveInStorage('movies', movieInfo);
   };
 
   return (

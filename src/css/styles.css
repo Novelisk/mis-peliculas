@@ -146,7 +146,8 @@ body {
 }
 
 .aside__form_input,
-.aside__form_text-area {
+.aside__form_text-area,
+.edit_popup__form_input {
   display: block;
   margin: 0 auto;
   margin-top: 15px;
@@ -160,7 +161,12 @@ body {
   border-color: transparent;
 }
 
-.aside__form-submit {
+.aside_search-span {
+  color: red;
+}
+
+.aside__form-submit,
+.edit_popup__form-submit {
   width: 100px;
   background-color: #0b70e1;
   color: white;
